@@ -37,6 +37,15 @@ docker-compose exec cli drush si social -y
 
 5. Visit the new site @ `http://template-drupal8-opensocial-lagoon.docker.amazee.io`
 
+6. (Optional) Do you want demo content in a pygmy environment?
+```bash
+docker-compose exec cli drush pm-enable social_demo -y
+docker-compose exec cli drush cc drush
+docker-compose exec cli drush demo-content-add file user group topic event event_enrollment comment post like
+```
+
+Read more about [demo Open Social content at Drupal.org](https://www.drupal.org/docs/distributions/open-social/create-demo-content)
+
 * If any steps fail, you're safe to rerun from any point.
 Starting again from the beginning will just reconfirm the changes.
 
@@ -67,6 +76,14 @@ lando drush si social -y
 ```
 
 6. And now we have a fully working local Open Social site on Lando! For more information on how to deploy your site, check out our documentation or our deployment demo.
+
+7. (Optional) Do you want demo content in a lando environment?
+```bash
+lando drush pm-enable social_demo -y
+lando drush cc drush
+lando drush demo-content-add file user group topic event event_enrollment comment post like
+```
+Read more about [demo Open Social content at Drupal.org](https://www.drupal.org/docs/distributions/open-social/create-demo-content)
 
 ## What does the template do?
 
