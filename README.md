@@ -26,14 +26,16 @@ dependencies with [Composer](https://getcomposer.org/). It is based on the [amaz
 
     ```bash
     docker-compose up -d
-    docker-compose exec cli composer install
+    docker-compose exec -e COMPOSER_MEMORY_LIMIT=-1 cli composer install
     ```
 
-4. Install your OpenSocial site with Drush:
+4. (Optional) Install your OpenSocial site with Drush:
 
 ```bash
 docker-compose exec cli drush si social -y
 ```
+
+You can skip this step to use the web installer.
 
 5. Visit the new site @ `http://template-drupal8-opensocial-lagoon.docker.amazee.io`
 
@@ -69,11 +71,13 @@ This repository is set up with a `.lando.yml` file, which allows you to use Land
 lando start
 ```
 
-5. Install your OpenSocial site with Drush:
+5. (Optional) Install your OpenSocial site with Drush:
 
 ```bash
 lando drush si social -y
 ```
+
+You can skip this step to use the web installer.
 
 6. And now we have a fully working local Open Social site on Lando! For more information on how to deploy your site, check out our documentation or our deployment demo.
 
@@ -83,6 +87,7 @@ lando drush pm-enable social_demo -y
 lando drush cc drush
 lando drush demo-content-add file user group topic event event_enrollment comment post like
 ```
+
 Read more about [demo Open Social content at Drupal.org](https://www.drupal.org/docs/distributions/open-social/create-demo-content)
 
 ## What does the template do?
