@@ -1,4 +1,4 @@
-name: drupal9-example-simple
+name: template-drupal8-opensocial-lagoon
 recipe: lagoon
 config:
   flavor: drupal
